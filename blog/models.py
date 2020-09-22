@@ -21,11 +21,11 @@ class UserProfile(models.Model):
     description = models.CharField(max_length=512, null=False, blank=False)
 
     def __str__(self):
-<<<<<<< HEAD
+
         return self.user.first_name + " " + self.user.last_name
-=======
+
         return self.user.first_name + "" + self.user.last_name
->>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
+
 
 
 class Article(models.Model):
@@ -36,10 +36,9 @@ class Article(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-<<<<<<< HEAD
+
     promote = models.BooleanField(default=False)
-=======
->>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
+
 
 
 class Category(models.Model):

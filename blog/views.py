@@ -1,12 +1,11 @@
 from django.shortcuts import render
 
 from django.views.generic import TemplateView
-<<<<<<< HEAD
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-=======
->>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
+
 
 from .models import *
 
@@ -22,7 +21,7 @@ class IndexPage(TemplateView):
                 'created_at': article.created_at.date(),
                 'category': article.category.title
             })
-<<<<<<< HEAD
+
         promote_data = []
         all_promote_article = Article.objects.filter()
         for promote_article in all_promote_article:
@@ -67,9 +66,9 @@ class AllArticleAPIView(APIView):
 
         except:
             return Response({'status': 'error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-=======
+
         context = {
             'article_data': article_data,
         }
         return render(request, 'index.html', context)
->>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
+

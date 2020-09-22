@@ -60,6 +60,6 @@ class AllArticleAPIView(APIView):
 
             return Response({'data': data}, status=status.HTTP_200_OK)
 
+
         except:
             return Response({'status': 'error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-#shirin

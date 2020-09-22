@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+
 from .models import *
 
 
@@ -42,23 +43,23 @@ class ContactPage(TemplateView):
 
 
 class AllArticleAPIView(APIView):
-   def get(self,request,format=None):
+    def get(self, request, format=None):
         try:
-           data=[]
-           all_articles=Article.objects.all().order_by('-created_at')[:10]
-           for article in all_articles:
-               data.append({
-                   'title':article.title,
-                   'cover':article.cover.url if article.cover else None,
-                   'content':article.content,
-                   'author':article.author.user.first_name+' '+article.author.user.last_name,
-                   'category':article.category.title,
-                   'created_at':article.created_at,
-                   'promote':article.promote,
-               })
+            data = []
+            all_articles = Article.objects.all().order_by('-created_at')[:10]
+            for article in all_articles:
+                data.append({
+                    'title': article.title,
+                    'cover': article.cover.url if article.cover else None,
+                    'content': article.content,
+                    'author': article.author.user.first_name + ' ' + article.author.user.last_name,
+                    'category': article.category.title,
+                    'created_at': article.created_at,
+                    'promote': article.promote,
+                })
 
-           return Response({'data':data}, status=status.HTTP_200_OK)
+            return Response({'data': data}, status=status.HTTP_200_OK)
 
         except:
-            return Response({'status':'error'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
+            return Response({'status': 'error'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+#shirin

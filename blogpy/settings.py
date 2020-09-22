@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'ckeditor',
+<<<<<<< HEAD
     'rest_framework',
+=======
+>>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
 ]
 
 MIDDLEWARE = [
@@ -77,7 +80,11 @@ WSGI_APPLICATION = 'blogpy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+<<<<<<< HEAD
         'NAME': 'postgres',
+=======
+        'NAME': 'jango',
+>>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -130,5 +137,10 @@ CKEDITOR_BASE = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "/uploads/"
 
 # setting media
+<<<<<<< HEAD
 MEDIA_URL = "files/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "")
+=======
+MEDIA_URL = 'files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'files/')
+>>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0

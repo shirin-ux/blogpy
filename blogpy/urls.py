@@ -22,14 +22,21 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+<<<<<<< HEAD
     url(r'^', include('blog.urls')),
     url(r'^api-auth/', include('rest_framework.urls')),
 
+=======
+    url(r'^', include('blog.urls'))
+>>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+<<<<<<< HEAD
     urlpatterns += static('/contact/static/', document_root=settings.STATIC_ROOT)
+=======
+>>>>>>> 914a5b8767bb3fb05ae452eaeb88e4c6372c5da0
 
 # admin
 # qwertyuiop1890
